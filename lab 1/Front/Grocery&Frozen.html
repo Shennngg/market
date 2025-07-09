@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <style>
+ body {
+  font-family: Arial, sans-serif;
+  background-color: #F3E2C7;
+  background-image: url('Product Image/logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000px;
+  background-attachment: fixed;
+  opacity: 0.95;
+
+  }
+
+  .navbar {
+    background-color: #2F3D1C; /* forest green */
+  }
+
+  .navbar-brand span {
+    color: #B6804B; /* tan highlight */
+  }
+
+  .navbar-brand img {
+  max-height: 40px;
+  }
+
+  .btn-cart {
+    background-color: #4A0C08; /* deep maroon */
+    color: white;
+  }
+
+  .btn-outline-light {
+    border-color: #71965A;
+    color: #71965A;
+  }
+
+  .btn-outline-light:hover {
+    background-color: #71965A;
+    color: white;
+  }
+
+  .btn-outline-warning {
+    border-color: #B6804B;
+    color: #B6804B;
+  }
+
+  .btn-outline-warning:hover {
+    background-color: #B6804B;
+    color: white;
+  }
+
+  footer {
+    background-color: #B6804B; /* tan background */
+    color: white;
+  }
+
+  .footer-title {
+    color: #F3E2C7; /* beige for headers */
+  }
+
+  .product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .product-card img {
+    width: 200%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .product-card:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .btn-cart:hover {
+    background-color: #B6804B;
+    color: white;
+  }
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+  <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+  <img src="Product Image/logo.png" alt="VII Market Logo" style="height: 40px;" />
+  </a>
+  <a class="navbar-brand fw-bold" href="index.html"><span>VII</span>Market</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse ms-3" id="navbarNav">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item"><a class="nav-link" href="can_goods.html">Can Goods</a></li>
+      <li class="nav-item"><a class="nav-link" href="bread&bakery.html">Bread & Bakery</a></li>
+      <li class="nav-item"><a class="nav-link" href="drinks.html">Drinks</a></li>
+      <li class="nav-item"><a class="nav-link" href="fruits&vegetable.html">Fruits & Vegetables</a></li>
+      <li class="nav-item"><a class="nav-link" href="Grocery&Frozen.html">Grocery & Frozen</a></li>
+      <li class="nav-item"><a class="nav-link" href="RawMeat.html">Raw Meats</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Angus Beef.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Angus Beef </p>
+        <p class="mt-2">₱550.00 </p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="ground beef.jpg " class="img-fluid" alt="product">
+        <p class="mt-2">Ground Beef </p>
+        <p>₱168.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Burger.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Burger </p>
+        <p>₱900.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Fish stick.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Fish Stick </p>
+        <p>₱583.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Oven Roasters.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Oven Roaster </p>
+        <p class="mt-2">₱300.00 </p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Cooked Shrimp.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Cooked Shrimp </p>
+        <p>₱350.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="mix vegetable.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Mix Vegetable </p>
+        <p>₱100.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Fruit salad.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Fruit Salad </p>
+        <p>₱400.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Broccoli.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Broccoli </p>
+        <p class="mt-2">₱200.00 </p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Snickers Icecream.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Snickers Ice Cream </p>
+        <p>₱120.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="M&M.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">M&M </p>
+        <p>₱140.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-card">
+        <img src="Totino's.jpg" class="img-fluid" alt="product">
+        <p class="mt-2">Totino's </p>
+        <p>₱430.00</p>
+        <button class="btn btn-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+<footer class="mt-5 py-4">
+  <div class="container">
+    <div class="row text-start text-white">
+      <!-- Categories -->
+      <div class="col-md-3 mb-3">
+        <h5 class="footer-title">Categories</h5>
+        <ul class="list-unstyled">
+          <li><a href="can_goods.html" class="text-white text-decoration-none">Can Goods</a></li>
+          <li><a href="bread&bakery.html" class="text-white text-decoration-none">Bread & Bakery</a></li>
+          <li><a href="drinks.html" class="text-white text-decoration-none">Drinks</a></li>
+          <li><a href="fruits&vegetable.html" class="text-white text-decoration-none">Fruits & Vegetables</a></li>
+          <li><a href="Grocery&Frozen.html" class="text-white text-decoration-none">Grocery And Frozen</a></li>
+          <li><a href="RawMeat.html" class="text-white text-decoration-none">Raw Meats</a></li>
+        </ul>
+      </div>
+
+      <!-- Information -->
+      <div class="col-md-3 mb-3">
+        <h5 class="footer-title">Information</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Specials</a></li>
+          <li><a href="#" class="text-white text-decoration-none">New products</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Best sellers</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- My Account -->
+      <div class="col-md-3 mb-3">
+        <h5 class="footer-title">My Account</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">My orders</a></li>
+          <li><a href="#" class="text-white text-decoration-none">My credit slips</a></li>
+          <li><a href="#" class="text-white text-decoration-none">My addresses</a></li>
+          <li><a href="#" class="text-white text-decoration-none">My personal info</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact / Social -->
+      <div class="col-md-3 mb-3">
+        <h5 class="footer-title">Contact Us</h5>
+        <p>Email: support@viimarket.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <div class="d-flex gap-2">
+          <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
