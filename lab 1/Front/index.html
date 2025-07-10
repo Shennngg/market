@@ -184,6 +184,31 @@
     </div>
   </div>
 
+  <!-- Profile Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="profileModalLabel">User Profile</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="profileForm">
+          <div class="mb-3">
+            <label for="profileName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="profileName" required>
+          </div>
+          <div class="mb-3">
+            <label for="profileEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="profileEmail" required>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -496,6 +521,43 @@
       });
     }
   });
+</script>
+<script>
+const profileBtn = document.createElement('button');
+profileBtn.className = 'btn btn-outline-light me-2';
+profileBtn.textContent = 'Profile';
+profileBtn.setAttribute('data-bs-toggle', 'modal');
+profileBtn.setAttribute('data-bs-target', '#profileModal');
+
+container.insertBefore(profileBtn, logoutBtn);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const user = localStorage.getItem('smartUser');
+  const savedProfile = JSON.parse(localStorage.getItem('profileData')) || {};
+
+  if (user && savedProfile[user]) {
+    document.getElementById('profileName').value = savedProfile[user].name || '';
+    document.getElementById('profileEmail').value = savedProfile[user].email || '';
+  }
+
+  const profileForm = document.getElementById('profileForm');
+  profileForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('profileName').value;
+    const email = document.getElementById('profileEmail').value;
+
+    const updatedProfile = JSON.parse(localStorage.getItem('profileData')) || {};
+    updatedProfile[user] = { name, email };
+    localStorage.setItem('profileData', JSON.stringify(updatedProfile));
+
+    alert('Profile updated successfully!');
+    const modal = bootstrap.Modal.getInstance(document.getElementById('profileModal'));
+    modal.hide();
+  });
+});
+
 </script>
 
 <!-- Add this right before </body> -->
