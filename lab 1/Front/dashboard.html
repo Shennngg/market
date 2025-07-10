@@ -14,6 +14,14 @@
       --maroon: #4a0e08;
     }
 
+    body {
+      background-color: var(--beige);
+    }
+
+    #wrapper {
+      transition: all 0.3s ease;
+    }
+
     #wrapper.toggled #sidebar-wrapper {
       margin-left: -250px;
     }
@@ -21,7 +29,8 @@
     #sidebar-wrapper {
       width: 250px;
       min-height: 100vh;
-      background-color: var(--olive) !important;
+      background-color: var(--olive);
+      transition: margin 0.3s ease;
     }
 
     .sidebar-heading {
@@ -29,18 +38,18 @@
     }
 
     .list-group-item {
-      background-color: var(--olive) !important;
+      background-color: var(--olive);
       color: var(--beige);
       border: none;
     }
 
     .list-group-item:hover {
-      background-color: var(--brown) !important;
+      background-color: var(--brown);
       color: white;
     }
 
     .navbar {
-      background-color: var(--brown) !important;
+      background-color: var(--brown);
     }
 
     .navbar h4 {
@@ -59,10 +68,19 @@
 
     .card {
       border: none;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
     }
 
     .card-title {
       color: var(--olive);
+    }
+
+    canvas {
+      max-height: 300px;
     }
   </style>
 </head>
@@ -89,9 +107,9 @@
       </nav>
 
       <div class="container-fluid mt-4">
-        <div class="row">
-          <!-- Cards -->
-          <div class="col-lg-4 mb-4">
+        <!-- Quick Access Cards -->
+        <div class="row g-4">
+          <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-body">
                 <h5 class="card-title">Inventory</h5>
@@ -100,16 +118,16 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-body">
                 <h5 class="card-title">Sales Report</h5>
-                <p class="card-text">Check daily, monthly and yearly sales reports.</p>
+                <p class="card-text">Check daily, monthly, and yearly sales reports.</p>
                 <a href="sales report.html" class="btn btn-primary">View Reports</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4">
             <div class="card shadow-sm">
               <div class="card-body">
                 <h5 class="card-title">Profile</h5>
@@ -120,25 +138,23 @@
           </div>
         </div>
 
-        <!-- Line Graph -->
-        <div class="row">
+        <!-- Sales Overview Chart -->
+        <div class="row mt-4">
           <div class="col-12">
             <div class="card shadow-sm mb-4">
               <div class="card-body">
-                <h5 class="card-title">Monthly Sales Trend</h5>
-                <canvas id="lineChart" height="100"></canvas>
+                <h5 class="card-title mb-3">Monthly Sales Overview</h5>
+                <canvas id="salesChart"></canvas>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
     // Toggle sidebar
@@ -146,42 +162,48 @@
       document.getElementById("wrapper").classList.toggle("toggled");
     });
 
-    // Line Chart
-    const ctx = document.getElementById('lineChart').getContext('2d');
-    const lineChart = new Chart(ctx, {
-      type: 'line',
+    // Chart.js Bar Chart
+    const ctx = document.getElementById('salesChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
         datasets: [{
           label: 'Sales ($)',
-          data: [1200, 1500, 1700, 1400, 1800, 2000],
-          borderColor: 'var(--sage)',
-          backgroundColor: 'rgba(110, 142, 93, 0.2)',
-          fill: true,
-          tension: 0.4,
-          pointBackgroundColor: 'var(--maroon)',
-          pointBorderColor: 'var(--olive)'
+          data: [1200, 1900, 3000, 2500, 3200, 2800],
+          backgroundColor: [
+            'var(--sage)',
+            'var(--brown)',
+            'var(--olive)',
+            'var(--maroon)',
+            'var(--sage)',
+            'var(--brown)'
+          ],
+          borderRadius: 6
         }]
       },
       options: {
         responsive: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              label: ctx => `$${ctx.raw}`
+            }
+          }
+        },
         scales: {
           y: {
             beginAtZero: true,
             ticks: {
-              color: '#263812'
+              color: '#444'
             }
           },
           x: {
             ticks: {
-              color: '#263812'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            labels: {
-              color: '#263812'
+              color: '#444'
             }
           }
         }
